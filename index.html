@@ -8,6 +8,7 @@
   <ul>
     <li v-for="(todo,index) in todos">
       <span>{{todo.item}}</span>
+      <button v-on:click="editItem(todo.item)">編集</button>
       <button v-on:click="deleteItem(index)">削除</button>
     </li>
   </ul>

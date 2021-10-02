@@ -14,6 +14,17 @@ var app = new Vue({
 
       this.newItem = "";
     },
+    editItem: function (todo) {
+      if (this.newItem == "") return;
+      const targetIndex = this.todos.indexOf(todo);
+
+      this.todos.splice(targetIndex, 1, {
+        id: targetIndex,
+        item: this.newItem,
+      });
+
+      this.newItem = "";
+    },
     deleteItem: function (index) {
       this.todos.splice(index, 1);
     },
