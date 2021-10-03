@@ -1,0 +1,18 @@
+<div id="app">
+  <h1>Todoアプリ</h1>
+  <form v-on:submit.prevent>
+    <input type="text" v-model="newItem" />
+    <button v-on:click="addTodo">追加</button>
+  </form>
+
+  <ul>
+    <li v-for="(todo,index) in todos">
+      <span>{{todo.item}}</span>
+      <button v-on:click="editItem(todo.item)">編集</button>
+      <button v-on:click="deleteItem(index)">削除</button>
+    </li>
+  </ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="./index.js"></script>
